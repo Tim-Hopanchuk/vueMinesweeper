@@ -9,9 +9,8 @@ export function getMinedField(
     throw new Error('Invalid mine count');
   }
 
-  const minedField: CellType[][] = structuredClone(field);
-  const height = minedField.length;
-  const width = minedField[0].length;
+  const height = field.length;
+  const width = field[0].length;
 
   if (mines > height * width - 1) {
     throw new Error('Invalid mine count');
@@ -25,15 +24,15 @@ export function getMinedField(
     if (startCellIndex[0] === y && startCellIndex[1] === x) {
       continue;
     }
-    if (minedField[y][x].isMine) {
+    if (field[y][x].isMine) {
       continue;
     }
 
-    minedField[y][x].isMine = true;
+    field[y][x].isMine = true;
     currentMinesCount++;
   }
 
-  return minedField;
+  return field;
 }
 
 export function getRandomIntUpTo(max: number): number {
