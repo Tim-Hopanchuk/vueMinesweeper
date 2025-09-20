@@ -14,14 +14,12 @@ describe('getFieldWithOpenedMines', () => {
     const minedField: CellType[][] = getMinedField(emptyField, [4, 5], mines);
     const fieldWithOpenedMines: CellType[][] = getFieldWithOpenedMines(minedField, [5, 5]);
 
+    expect(fieldWithOpenedMines[5][5].isExploded, "doesn't mark target mine as exploded").toBe(
+      true,
+    );
+
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
-        if (y === 5 && x === 5) {
-          expect(
-            fieldWithOpenedMines[5][5].isExploded,
-            "doesn't mark target mine as exploded",
-          ).toBe(true);
-        }
         if (fieldWithOpenedMines[y][x].isMine) {
           expect(fieldWithOpenedMines[y][x].isOpened, "doesn't open mine").toBe(true);
         }
@@ -38,14 +36,12 @@ describe('getFieldWithOpenedMines', () => {
     const minedField: CellType[][] = getMinedField(emptyField, [0, 0], mines);
     const fieldWithOpenedMines: CellType[][] = getFieldWithOpenedMines(minedField, [1, 1]);
 
+    expect(fieldWithOpenedMines[1][1].isExploded, "doesn't mark target mine as exploded").toBe(
+      true,
+    );
+
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
-        if (y === 5 && x === 5) {
-          expect(
-            fieldWithOpenedMines[1][1].isExploded,
-            "doesn't mark target mine as exploded",
-          ).toBe(true);
-        }
         if (fieldWithOpenedMines[y][x].isMine) {
           expect(fieldWithOpenedMines[y][x].isOpened, "doesn't open mine").toBe(true);
         }
@@ -62,14 +58,12 @@ describe('getFieldWithOpenedMines', () => {
     const minedField: CellType[][] = getMinedField(emptyField, [10, 10], mines);
     const fieldWithOpenedMines: CellType[][] = getFieldWithOpenedMines(minedField, [10, 15]);
 
+    expect(fieldWithOpenedMines[10][15].isExploded, "doesn't mark target mine as exploded").toBe(
+      true,
+    );
+
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
-        if (y === 5 && x === 5) {
-          expect(
-            fieldWithOpenedMines[10][15].isExploded,
-            "doesn't mark target mine as exploded",
-          ).toBe(true);
-        }
         if (fieldWithOpenedMines[y][x].isMine) {
           expect(fieldWithOpenedMines[y][x].isOpened, "doesn't open mine").toBe(true);
         }

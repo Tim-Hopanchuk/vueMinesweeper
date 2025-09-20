@@ -25,16 +25,15 @@ describe('getMinedField', () => {
             continue;
           }
 
-          expect(
-            minedField[y][x][key as keyof CellType],
-            'changes properties besides isMine',
-          ).toStrictEqual(emptyField[y][x][key as keyof CellType]);
+          expect(minedField[y][x][key as keyof CellType], 'changes properties besides isMine').toBe(
+            emptyField[y][x][key as keyof CellType],
+          );
         }
       }
     }
 
-    expect(actualMines, 'places incorrect number of mines').toStrictEqual(mines);
-    expect(minedField[4][5].isMine, 'places mine to the start cell').toStrictEqual(false);
+    expect(actualMines, 'places incorrect number of mines').toBe(mines);
+    expect(minedField[4][5].isMine, 'places mine to the start cell').toBe(false);
   });
 
   it('creates correct Medium mined field', () => {
@@ -58,16 +57,15 @@ describe('getMinedField', () => {
             continue;
           }
 
-          expect(
-            minedField[y][x][key as keyof CellType],
-            'changes properties besides isMine',
-          ).toStrictEqual(emptyField[y][x][key as keyof CellType]);
+          expect(minedField[y][x][key as keyof CellType], 'changes properties besides isMine').toBe(
+            emptyField[y][x][key as keyof CellType],
+          );
         }
       }
     }
 
-    expect(actualMines, 'places incorrect number of mines').toStrictEqual(mines);
-    expect(minedField[0][0].isMine, 'places mine to the start cell').toStrictEqual(false);
+    expect(actualMines, 'places incorrect number of mines').toBe(mines);
+    expect(minedField[0][0].isMine, 'places mine to the start cell').toBe(false);
   });
 
   it('creates correct Hard mined field', () => {
@@ -91,16 +89,15 @@ describe('getMinedField', () => {
             continue;
           }
 
-          expect(
-            minedField[y][x][key as keyof CellType],
-            'changes properties besides isMine',
-          ).toStrictEqual(emptyField[y][x][key as keyof CellType]);
+          expect(minedField[y][x][key as keyof CellType], 'changes properties besides isMine').toBe(
+            emptyField[y][x][key as keyof CellType],
+          );
         }
       }
     }
 
-    expect(actualMines, 'places incorrect number of mines').toStrictEqual(mines);
-    expect(minedField[1][0].isMine, 'places mine to the start cell').toStrictEqual(false);
+    expect(actualMines, 'places incorrect number of mines').toBe(mines);
+    expect(minedField[1][0].isMine, 'places mine to the start cell').toBe(false);
   });
 
   it('throws error for invalid mines amount', () => {
@@ -132,7 +129,7 @@ describe('getRandomIntUpTo', () => {
 
       expect(randomInt, 'generates integer less than 0').toBeGreaterThanOrEqual(0);
       expect(randomInt, 'generates integer greater than max').toBeLessThanOrEqual(8);
-      expect(randomInt % 1, 'generates non-integer').toStrictEqual(0);
+      expect(randomInt % 1, 'generates non-integer').toBe(0);
     }
 
     for (let i = 0; i < 100; i++) {
@@ -140,7 +137,7 @@ describe('getRandomIntUpTo', () => {
 
       expect(randomInt, 'generates integer less than 0').toBeGreaterThanOrEqual(0);
       expect(randomInt, 'generates integer greater than max').toBeLessThanOrEqual(16);
-      expect(randomInt % 1, 'generates non-integer').toStrictEqual(0);
+      expect(randomInt % 1, 'generates non-integer').toBe(0);
     }
 
     for (let i = 0; i < 100; i++) {
@@ -148,7 +145,7 @@ describe('getRandomIntUpTo', () => {
 
       expect(randomInt, 'generates integer less than 0').toBeGreaterThanOrEqual(0);
       expect(randomInt, 'generates integer greater than max').toBeLessThanOrEqual(24);
-      expect(randomInt % 1, 'generates non-integer').toStrictEqual(0);
+      expect(randomInt % 1, 'generates non-integer').toBe(0);
     }
   });
 

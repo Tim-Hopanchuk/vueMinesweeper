@@ -6,10 +6,10 @@ describe('getEmptyField', () => {
   it('creates correct Easy field', () => {
     const width = 8;
     const height = 8;
-    const field = getEmptyField(width, height);
+    const field: CellType[][] = getEmptyField(width, height);
 
-    expect(field.length, 'creates Easy field with wrong height').toStrictEqual(height);
-    expect(field[0].length, 'creates Easy field with wrong width').toStrictEqual(width);
+    expect(field.length, 'creates Easy field with wrong height').toBe(height);
+    expect(field[0].length, 'creates Easy field with wrong width').toBe(width);
 
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
@@ -29,10 +29,10 @@ describe('getEmptyField', () => {
   it('creates correct Medium field', () => {
     const width = 16;
     const height = 16;
-    const field = getEmptyField(width, height);
+    const field: CellType[][] = getEmptyField(width, height);
 
-    expect(field.length, 'creates Medium field with wrong height').toStrictEqual(height);
-    expect(field[0].length, 'creates Medium field with wrong width').toStrictEqual(width);
+    expect(field.length, 'creates Medium field with wrong height').toBe(height);
+    expect(field[0].length, 'creates Medium field with wrong width').toBe(width);
 
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
@@ -52,10 +52,10 @@ describe('getEmptyField', () => {
   it('creates correct Hard field', () => {
     const width = 24;
     const height = 24;
-    const field = getEmptyField(width, height);
+    const field: CellType[][] = getEmptyField(width, height);
 
-    expect(field.length, 'creates Hard field with wrong height').toStrictEqual(height);
-    expect(field[0].length, 'creates Hard field with wrong width').toStrictEqual(width);
+    expect(field.length, 'creates Hard field with wrong height').toBe(height);
+    expect(field[0].length, 'creates Hard field with wrong width').toBe(width);
 
     for (let y = 0; y < height; y++) {
       for (let x = 0; x < width; x++) {
