@@ -1,8 +1,11 @@
 import type { CellType } from '@/utils/types';
+import { getFieldCopy } from './getFieldCopy';
 
 export function getFieldWithOpenedCell(field: CellType[][], index: [number, number]): CellType[][] {
-  const height = field.length;
-  const width = field[0].length;
+  const fieldWithOpenedCell: CellType[][] = getFieldCopy(field);
+
+  const height = fieldWithOpenedCell.length;
+  const width = fieldWithOpenedCell[0].length;
 
   const queue: [number, number][] = [index];
   const visited = new Set<string>();
@@ -11,10 +14,10 @@ export function getFieldWithOpenedCell(field: CellType[][], index: [number, numb
     const y = queue[i][0];
     const x = queue[i][1];
 
-    field[y][x].isOpened = true;
+    fieldWithOpenedCell[y][x].isOpened = true;
     visited.add(y + '.' + x);
 
-    if (field[y][x].adjacentMines > 0) {
+    if (fieldWithOpenedCell[y][x].adjacentMines > 0) {
       continue;
     }
 
@@ -38,5 +41,5 @@ export function getFieldWithOpenedCell(field: CellType[][], index: [number, numb
     }
   }
 
-  return field;
+  return fieldWithOpenedCell;
 }

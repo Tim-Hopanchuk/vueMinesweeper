@@ -1,16 +1,19 @@
 import type { CellType } from '@/utils/types';
+import { getFieldCopy } from './getFieldCopy';
 
 export function getCalculatedField(field: CellType[][]): CellType[][] {
-  const height = field.length;
-  const width = field[0].length;
+  const calculatedField: CellType[][] = getFieldCopy(field);
+
+  const height = calculatedField.length;
+  const width = calculatedField[0].length;
 
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
-      field[y][x].adjacentMines = getAdjacentMines(field, [y, x]);
+      calculatedField[y][x].adjacentMines = getAdjacentMines(calculatedField, [y, x]);
     }
   }
 
-  return field;
+  return calculatedField;
 }
 
 function getAdjacentMines(field: CellType[][], index: [number, number]): number {

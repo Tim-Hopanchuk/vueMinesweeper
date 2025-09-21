@@ -1,16 +1,19 @@
 import type { CellType } from '@/utils/types';
+import { getFieldCopy } from './getFieldCopy';
 
 export function getMinedField(
   field: CellType[][],
   startCellIndex: [number, number],
   mines: number,
 ): CellType[][] {
+  const minedField: CellType[][] = getFieldCopy(field);
+
   if (mines < 0) {
     throw new Error('Invalid mine count');
   }
 
-  const height = field.length;
-  const width = field[0].length;
+  const height = minedField.length;
+  const width = minedField[0].length;
 
   if (mines > height * width - 1) {
     throw new Error('Invalid mine count');
@@ -24,15 +27,15 @@ export function getMinedField(
     if (startCellIndex[0] === y && startCellIndex[1] === x) {
       continue;
     }
-    if (field[y][x].isMine) {
+    if (minedField[y][x].isMine) {
       continue;
     }
 
-    field[y][x].isMine = true;
+    minedField[y][x].isMine = true;
     currentMinesCount++;
   }
 
-  return field;
+  return minedField;
 }
 
 export function getRandomIntUpTo(max: number): number {
