@@ -1,17 +1,28 @@
-import type { CellType } from '@/utils/types';
+import type { CellType } from './types';
 import { getFieldCopy } from './getFieldCopy';
+
+/**
+ * Randomly places mines on the field
+ *
+ * @param {CellType[][]} field - array representing the game field with cell information
+ * @param {[number, number]} startCellIndex - the [y, x] coordinates of the first clicked cell (a mine cannot be placed here)
+ * @param {number} mines - the number of mines to place on the field
+ * @returns {CellType[][]} a new field with randomly placed mines
+ * 
+ * @throws {Error} when the mine count is negative or exceeds the number of available cells
+ * 
+ */
 
 export function getMinedField(
   field: CellType[][],
   startCellIndex: [number, number],
   mines: number,
 ): CellType[][] {
-  const minedField: CellType[][] = getFieldCopy(field);
-
   if (mines < 0) {
     throw new Error('Invalid mine count');
   }
 
+  const minedField: CellType[][] = getFieldCopy(field);
   const height = minedField.length;
   const width = minedField[0].length;
 
@@ -19,12 +30,12 @@ export function getMinedField(
     throw new Error('Invalid mine count');
   }
 
-  let currentMinesCount = 0;
-  while (currentMinesCount < mines) {
+  let minesPlaced = 0;
+  while (minesPlaced < mines) {
     let y = getRandomIntUpTo(height - 1);
     let x = getRandomIntUpTo(width - 1);
 
-    if (startCellIndex[0] === y && startCellIndex[1] === x) {
+    if (y === startCellIndex[0] && x === startCellIndex[1]) {
       continue;
     }
     if (minedField[y][x].isMine) {
@@ -32,11 +43,20 @@ export function getMinedField(
     }
 
     minedField[y][x].isMine = true;
-    currentMinesCount++;
+    minesPlaced++;
   }
 
   return minedField;
 }
+
+/**
+ * Returns a random integer between 0 and the given max (inclusive)
+ *
+ * @param {number} max - the maximum value
+ * @returns {number} a random integer in the range [0, max]
+ * 
+ * @throws {Error} when max is negative
+ */
 
 export function getRandomIntUpTo(max: number): number {
   if (max < 0) {

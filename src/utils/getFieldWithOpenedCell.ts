@@ -1,12 +1,20 @@
-import type { CellType } from '@/utils/types';
+import type { CellType } from './types';
 import { getFieldCopy } from './getFieldCopy';
+
+/**
+ * Opens a cell and automatically reveals connected empty areas
+ * If the cell has no adjacent mines, recursively opens all connected empty cells and their borders
+ *
+ * @param {CellType[][]} field - array representing the game field with cell information
+ * @param {[number, number]} index - the [y, x] coordinates of the cell to open
+ * @returns {CellType[][]} a new field with the specified cell and connected empty area opened
+ *
+ */
 
 export function getFieldWithOpenedCell(field: CellType[][], index: [number, number]): CellType[][] {
   const fieldWithOpenedCell: CellType[][] = getFieldCopy(field);
-
   const height = fieldWithOpenedCell.length;
   const width = fieldWithOpenedCell[0].length;
-
   const queue: [number, number][] = [index];
   const visited = new Set<string>();
 
@@ -29,10 +37,12 @@ export function getFieldWithOpenedCell(field: CellType[][], index: [number, numb
         if (visited.has(currentY + '.' + currentX)) {
           continue;
         }
-        if (currentX < 0 || currentX > width - 1) {
+
+        // Check for out-of-bounds access
+        if (currentY < 0 || currentX < 0) {
           continue;
         }
-        if (currentY < 0 || currentY > height - 1) {
+        if (currentY > height - 1 || currentX > width - 1) {
           continue;
         }
 
