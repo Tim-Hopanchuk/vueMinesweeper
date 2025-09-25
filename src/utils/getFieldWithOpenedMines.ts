@@ -22,7 +22,7 @@ export function getFieldWithOpenedMines(
 
   for (let y = 0; y < height; y++) {
     for (let x = 0; x < width; x++) {
-      if (fieldWithOpenedMines[y][x].isMine) {
+      if (fieldWithOpenedMines[y][x].isMine && !fieldWithOpenedMines[y][x].isFlagMarked) {
         fieldWithOpenedMines[y][x].isOpened = true;
       }
     }

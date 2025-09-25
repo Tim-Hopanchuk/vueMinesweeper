@@ -70,4 +70,34 @@ describe('getFieldWithOpenedMines', () => {
       }
     }
   });
+
+  it("doesn't open flag marked cells", () => {
+    const width = 8;
+    const height = 8;
+    const mines = 10;
+
+    const emptyField: CellType[][] = getEmptyField(width, height);
+    const minedField: CellType[][] = getMinedField(emptyField, [4, 5], mines);
+
+    minedField[0][0].isFlagMarked = true;
+    minedField[1][1].isFlagMarked = true;
+    minedField[2][2].isFlagMarked = true;
+
+    const fieldWithOpenedMines: CellType[][] = getFieldWithOpenedMines(minedField, [5, 5]);
+
+    expect(fieldWithOpenedMines[5][5].isExploded, "doesn't mark target mine as exploded").toBe(
+      true,
+    );
+
+    for (let y = 0; y < height; y++) {
+      for (let x = 0; x < width; x++) {
+        if (fieldWithOpenedMines[y][x].isMine && !fieldWithOpenedMines[y][x].isFlagMarked) {
+          expect(fieldWithOpenedMines[y][x].isOpened, "doesn't open mine").toBe(true);
+        }
+        if (fieldWithOpenedMines[y][x].isMine && fieldWithOpenedMines[y][x].isFlagMarked) {
+          expect(fieldWithOpenedMines[y][x].isOpened, "opens flag marked mine").toBe(false);
+        }
+      }
+    }
+  });
 });
