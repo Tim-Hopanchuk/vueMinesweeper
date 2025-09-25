@@ -23,6 +23,8 @@ export function getFieldWithOpenedCell(field: CellType[][], index: [number, numb
     const x = queue[i][1];
 
     fieldWithOpenedCell[y][x].isOpened = true;
+    fieldWithOpenedCell[y][x].isFlagMarked = false;
+    fieldWithOpenedCell[y][x].isQuestionMarked = false;
     visited.add(y + '.' + x);
 
     if (fieldWithOpenedCell[y][x].adjacentMines > 0) {
