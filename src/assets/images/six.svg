@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 34 34" style="enable-background:new 0 0 34 34;" xml:space="preserve">
-<g id="Layer_6">
-	<g>
-		<path d="M16.98,5.57h3.23c-0.29,0.68-1,2.14-2.11,4.39c-0.7,1.45-1.47,3.24-2.31,5.37c0.82-0.68,1.63-1.02,2.45-1.02
-			c1.4,0,2.45,0.68,3.13,2.04c0.5,1,0.75,2.73,0.75,5.2c0,0.79-0.03,1.49-0.08,2.07c-0.06,0.59-0.18,1.21-0.37,1.85
-			c-0.19,0.65-0.46,1.18-0.8,1.6c-0.34,0.42-0.81,0.76-1.41,1.04c-0.6,0.27-1.31,0.41-2.13,0.41c-0.88,0-1.64-0.17-2.26-0.49
-			s-1.1-0.73-1.45-1.19c-0.34-0.46-0.61-1.07-0.8-1.82c-0.19-0.75-0.31-1.43-0.36-2.06c-0.05-0.62-0.07-1.35-0.07-2.19
-			c0-1.86,0.23-3.71,0.68-5.56c0.45-1.85,0.95-3.38,1.5-4.61C15.11,9.38,15.91,7.7,16.98,5.57z M19.19,21.48
-			c0-1.56-0.13-2.69-0.41-3.37c-0.29-0.68-0.79-1.02-1.5-1.02c-0.73,0-1.21,0.34-1.46,1.02c-0.29,0.77-0.44,1.87-0.44,3.3
-			c0,2.97,0.63,4.45,1.9,4.45C18.55,25.87,19.19,24.41,19.19,21.48z"/>
-	</g>
+	 viewBox="0 0 26 26" style="enable-background:new 0 0 26 26;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;}
+	.st2{font-family:'ArcadeClassic';}
+	.st3{font-size:40px;}
+	.st4{display:inline;opacity:0.25;}
+	.st5{fill:#3953A4;}
+	.st6{fill:#37B44A;}
+	.st7{fill:#ED2024;}
+	.st8{fill:#30429B;}
+	.st9{fill:#C22026;}
+	.st10{fill:#25BDBF;}
+	.st11{fill:#828383;}
+</style>
+<g id="Layer_1" class="st0">
+</g>
+<g id="Layer_2" class="st0">
+	<text transform="matrix(1 0 0 1 1.875 0.75)" class="st1 st2 st3">6</text>
+</g>
+<g id="Layer_4" class="st0">
+	<text transform="matrix(1 0 0 1 2.875 25.75)" class="st4 st2 st3">6</text>
 </g>
 <g id="Layer_3">
+	<rect x="9" y="3" class="st10" width="11" height="3"/>
+	<rect x="6" y="6" class="st10" width="6" height="3"/>
+	<rect x="3" y="9" class="st10" width="6" height="11"/>
+	<rect x="5" y="20" class="st10" width="15" height="3"/>
+	<rect x="5" y="12" class="st10" width="15" height="3"/>
+	<rect x="17" y="15" class="st10" width="6" height="5"/>
 </g>
 </svg>

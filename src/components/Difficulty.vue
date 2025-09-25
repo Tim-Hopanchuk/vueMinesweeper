@@ -8,14 +8,23 @@ const emits = defineEmits<{
 </script>
 
 <template>
-  <button @click="emits('changeDifficulty', props.difficulty)">{{ props.difficulty }}</button>
+  <button class="btn border-out-thin" @click="emits('changeDifficulty', props.difficulty)">
+    {{ props.difficulty }}
+  </button>
 </template>
 
 <style scoped>
 button {
   height: 34px;
-  width: 100px;
-  padding: 0px;
-  margin: 0px;
+  width: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  font-family: arcadeclassic;
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-indent: 15px;
 }
 </style>

@@ -23,6 +23,14 @@ const emits = defineEmits<{
 }>();
 
 const icon: ComputedRef<string> = computed(() => {
+  if (props.cellProperties.isFlagMarked && !props.cellProperties.isOpened) {
+    return flagIcon;
+  }
+
+  if (props.cellProperties.isQuestionMarked && !props.cellProperties.isOpened) {
+    return questionIcon;
+  }
+
   if (!props.cellProperties.isOpened) {
     return '';
   }
@@ -30,14 +38,8 @@ const icon: ComputedRef<string> = computed(() => {
   if (props.cellProperties.isMine) {
     return mineIcon;
   }
-  if (props.cellProperties.isFlagged) {
-    return flagIcon;
-  }
-  if (props.cellProperties.isQuestioned) {
-    return questionIcon;
-  }
 
-  switch (props.cellProperties.minesAround) {
+  switch (props.cellProperties.adjacentMines) {
     case 1:
       return oneIcon;
     case 2:
@@ -63,10 +65,11 @@ const icon: ComputedRef<string> = computed(() => {
 
 <template>
   <button
+    class="btn border-out-thin icon-center"
     @click="emits('openCell', props.cellProperties.index)"
     @contextmenu.prevent="emits('markCell', props.cellProperties.index)"
   >
-    <img v-if="icon" :src="icon" />
+    <img v-if="icon" :src="icon" draggable="false" />
   </button>
 </template>
 
@@ -74,14 +77,16 @@ const icon: ComputedRef<string> = computed(() => {
 button {
   height: 34px;
   width: 34px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
+
 img {
-  height: 34px;
-  width: 34px;
+  height: 26px;
+  width: 26px;
+}
+
+.opened {
+  border: 1px solid #828282;
+  padding: 3px;
 }
 
 .exploded {

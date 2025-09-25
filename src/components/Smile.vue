@@ -22,27 +22,19 @@ const icon: ComputedRef<string> = computed(() => {
 </script>
 
 <template>
-  <button>
-    <img :src="icon" />
+  <button class="btn border-out-thin icon-center">
+    <img :src="icon" draggable="false" />
   </button>
 </template>
 
 <style scoped>
 button {
-  height: 68px;
-  width: 68px;
-  padding: 0px;
-  margin: 0px;
-
-  position: relative;
-}
-img {
   height: 50px;
   width: 50px;
+}
 
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+img {
+  height: 42px;
+  width: 42px;
 }
 </style>
