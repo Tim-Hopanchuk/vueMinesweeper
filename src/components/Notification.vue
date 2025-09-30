@@ -3,12 +3,12 @@ const props = defineProps<{
   elapsedTime: number;
 }>();
 
-let message = `Victory! You won in ${props.elapsedTime} seconds`;
+const message = `Victory! You won in ${props.elapsedTime} seconds`;
 </script>
 
 <template>
   <div class="overlay">
-    <div class="notification border-out-thick">
+    <div class="notification">
       {{ message }}
     </div>
   </div>
@@ -16,26 +16,28 @@ let message = `Victory! You won in ${props.elapsedTime} seconds`;
 
 <style scoped>
 .overlay {
-  position: fixed;
+  height: 100vh;
+  width: 100vw;
   top: 0px;
   left: 0px;
-  width: 100vw;
-  height: 100vh;
-
-  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .notification {
-  background-color: #c3c3c3;
   padding: 30px 50px;
-  text-align: center;
-
+  background-color: #c3c3c3;
+  border-left: 7px solid #ffffff;
+  border-top: 7px solid #ffffff;
+  border-right: 7px solid #828282;
+  border-bottom: 7px solid #828282;
   font-family: arcadeclassic;
   font-size: 28px;
   letter-spacing: 2px;
+  text-align: center;
 }
 </style>

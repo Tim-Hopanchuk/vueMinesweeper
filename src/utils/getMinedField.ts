@@ -8,9 +8,9 @@ import { getFieldCopy } from './getFieldCopy';
  * @param {[number, number]} startCellIndex - the [y, x] coordinates of the first clicked cell (a mine cannot be placed here)
  * @param {number} mines - the number of mines to place on the field
  * @returns {CellType[][]} a new field with randomly placed mines
- * 
+ *
  * @throws {Error} when the mine count is negative or exceeds the number of available cells
- * 
+ *
  */
 
 export function getMinedField(
@@ -54,7 +54,7 @@ export function getMinedField(
  *
  * @param {number} max - the maximum value
  * @returns {number} a random integer in the range [0, max]
- * 
+ *
  * @throws {Error} when max is negative
  */
 

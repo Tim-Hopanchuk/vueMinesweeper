@@ -25,9 +25,10 @@ describe('getMinedField', () => {
             continue;
           }
 
-          expect(minedField[y][x][key as keyof CellType], 'changes properties besides isMine').toStrictEqual(
-            emptyField[y][x][key as keyof CellType],
-          );
+          expect(
+            minedField[y][x][key as keyof CellType],
+            'changes properties besides isMine',
+          ).toStrictEqual(emptyField[y][x][key as keyof CellType]);
         }
       }
     }
@@ -57,9 +58,10 @@ describe('getMinedField', () => {
             continue;
           }
 
-          expect(minedField[y][x][key as keyof CellType], 'changes properties besides isMine').toStrictEqual(
-            emptyField[y][x][key as keyof CellType],
-          );
+          expect(
+            minedField[y][x][key as keyof CellType],
+            'changes properties besides isMine',
+          ).toStrictEqual(emptyField[y][x][key as keyof CellType]);
         }
       }
     }
@@ -89,9 +91,10 @@ describe('getMinedField', () => {
             continue;
           }
 
-          expect(minedField[y][x][key as keyof CellType], 'changes properties besides isMine').toStrictEqual(
-            emptyField[y][x][key as keyof CellType],
-          );
+          expect(
+            minedField[y][x][key as keyof CellType],
+            'changes properties besides isMine',
+          ).toStrictEqual(emptyField[y][x][key as keyof CellType]);
         }
       }
     }

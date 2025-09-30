@@ -1,20 +1,20 @@
 <script setup lang="ts">
-import type { CellType } from '@/utils/types';
-import { computed } from 'vue';
 import type { ComputedRef } from 'vue';
+import { computed } from 'vue';
+import type { CellType } from '../utils/types';
 
-import mineIcon from '@/assets/images/mine.svg';
-import flagIcon from '@/assets/images/flag.svg';
-import questionIcon from '@/assets/images/question.svg';
+import mineIcon from '../assets/images/mine.svg';
+import flagIcon from '../assets/images/flag.svg';
+import questionIcon from '../assets/images/question.svg';
 
-import oneIcon from '@/assets/images/one.svg';
-import twoIcon from '@/assets/images/two.svg';
-import threeIcon from '@/assets/images/three.svg';
-import fourIcon from '@/assets/images/four.svg';
-import fiveIcon from '@/assets/images/five.svg';
-import sixIcon from '@/assets/images/six.svg';
-import sevenIcon from '@/assets/images/seven.svg';
-import eightIcon from '@/assets/images/eight.svg';
+import oneIcon from '../assets/images/one.svg';
+import twoIcon from '../assets/images/two.svg';
+import threeIcon from '../assets/images/three.svg';
+import fourIcon from '../assets/images/four.svg';
+import fiveIcon from '../assets/images/five.svg';
+import sixIcon from '../assets/images/six.svg';
+import sevenIcon from '../assets/images/seven.svg';
+import eightIcon from '../assets/images/eight.svg';
 
 const props = defineProps<{ cellProperties: CellType }>();
 const emits = defineEmits<{
@@ -65,7 +65,6 @@ const icon: ComputedRef<string> = computed(() => {
 
 <template>
   <button
-    class="btn border-out-thin icon-center"
     @click="emits('openCell', props.cellProperties.index)"
     @contextmenu.prevent="emits('markCell', props.cellProperties.index)"
   >
@@ -77,16 +76,35 @@ const icon: ComputedRef<string> = computed(() => {
 button {
   height: 34px;
   width: 34px;
+  position: relative;
+  padding: 0;
+  background-color: #c3c3c3;
+  border-left: 4px solid #ffffff;
+  border-top: 4px solid #ffffff;
+  border-right: 4px solid #828282;
+  border-bottom: 4px solid #828282;
+}
+
+button:hover {
+  background-color: #d2d2d2;
+}
+
+button:active {
+  background-color: #b9b9b9;
 }
 
 img {
   height: 26px;
   width: 26px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
 }
 
 .opened {
-  border: 1px solid #828282;
   padding: 3px;
+  border: 1px solid #828282;
 }
 
 .exploded {

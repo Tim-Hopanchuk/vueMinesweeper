@@ -1,9 +1,13 @@
 export interface CellType {
   isOpened: boolean;
   isMine: boolean;
-  isFlagged: boolean;
-  isQuestioned: boolean;
+  isFlagMarked: boolean;
+  isQuestionMarked: boolean;
   isExploded: boolean;
-  minesAround: number;
+  adjacentMines: number;
   index: [number, number];
 }
+
+export type GameStateType = 'idle' | 'running' | 'ended';
+export type SmileStateType = 'neutral' | 'win' | 'lose';
+export type DifficultyType = 'easy' | 'medium' | 'hard';

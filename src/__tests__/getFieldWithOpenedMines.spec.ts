@@ -95,7 +95,7 @@ describe('getFieldWithOpenedMines', () => {
           expect(fieldWithOpenedMines[y][x].isOpened, "doesn't open mine").toBe(true);
         }
         if (fieldWithOpenedMines[y][x].isMine && fieldWithOpenedMines[y][x].isFlagMarked) {
-          expect(fieldWithOpenedMines[y][x].isOpened, "opens flag marked mine").toBe(false);
+          expect(fieldWithOpenedMines[y][x].isOpened, 'opens flag marked mine').toBe(false);
         }
       }
     }

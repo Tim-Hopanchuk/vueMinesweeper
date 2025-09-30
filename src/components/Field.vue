@@ -12,21 +12,33 @@ const emits = defineEmits<{
 </script>
 
 <template>
-  <div class="game-field border-in-thick">
-    <div v-for="row in props.field">
+  <div class="field">
+    <div v-for="(row, rowIndex) in props.field" :key="rowIndex">
       <Cell
         v-for="cell in row"
         :key="cell.index[0] + '.' + cell.index[1]"
         :cellProperties="cell"
+        @open-cell="emits('openCell', cell.index)"
+        @mark-cell="emits('markCell', cell.index)"
         :class="{
           opened: cell.isOpened,
           exploded: cell.isExploded,
         }"
-        @open-cell="emits('openCell', cell.index)"
-        @mark-cell="emits('markCell', cell.index)"
       />
     </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.field {
+  width: fit-content;
+  border-left: 7px solid #828282;
+  border-top: 7px solid #828282;
+  border-right: 7px solid #ffffff;
+  border-bottom: 7px solid #ffffff;
+}
+
+.field > div {
+  display: flex;
+}
+</style>
