@@ -1,39 +1,33 @@
-# vue-minesweeper
+# Vue Minesweeper
 
-This template should help get you started developing with Vue 3 in Vite.
+A classic Windows Minesweeper game built with Vue 3 and TypeScript.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Three Difficulty Levels** - Easy (8×8, 10 mines), Medium (16×16, 40 mines), Hard (30×16, 99 mines)
+- **Classic Gameplay** - Left-click to reveal cells, right-click to mark with flags or question marks
+- **Win/Lose Detection** - Game over when hitting a mine or winning by revealing all safe cells
+- **Retro UI** - Recreation of classic Minesweeper design
 
-## Type Support for `.vue` Imports in TS
+## Technologies & Approach
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Core Stack
 
-## Customize configuration
+- **Vue 3** - Composition API
+- **TypeScript** - Type safety throughout the application
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Architecture & Patterns
 
-## Project Setup
+- **Immutability First** - Game state updates create new objects instead of mutating existing ones
+- **Pure Functions** - Game logic implemented as side-effect-free functions
 
-```sh
-npm install
-```
+### Code Quality
 
-### Compile and Hot-Reload for Development
+- **Vitest** - Unit testing for all utility functions
+- **Test-Driven Development** - Tests written to validate game logic
+- **JSDoc Comments** - Documentation for all functions
 
-```sh
-npm run dev
-```
+### Styling
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
+- **Scoped Styles** - Component-scoped styling to prevent conflicts
+- **Pixel-Perfect Design** - Careful attention to borders, spacing, alignment and icons
