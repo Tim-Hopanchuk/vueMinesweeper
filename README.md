@@ -1,5 +1,7 @@
 # Vue Minesweeper
 
+### [CLICK TO PLAY](https://tim-hopanchuk.github.io/vueMinesweeper/ "A link to a page where you can play vueMinesweeper")
+
 A classic Windows Minesweeper game built with Vue 3 and TypeScript.
 
 ## Features
